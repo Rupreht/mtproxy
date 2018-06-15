@@ -43,7 +43,7 @@ A single worker process is expected to handle tens of thousands of clients on a 
 `docker run -d -p443:443 -v ./config:/data -e WORKERS=16 alexdoesh/mtproxy:latest`
 
 ## Monitoring
-The MTProto proxy server exports internal statistics as tab-separated values over the http://localhost:2398/stats endpoint. Please note that this endpoint is available only from localhost: depending on your configuration, you may need to collect the statistics with `docker exec mtproto-proxy curl http://localhost:2398/stats`.
+The MTProto proxy server exports internal statistics as tab-separated values over the http://localhost:2398/stats endpoint. Please note that this endpoint is available only from localhost: depending on your configuration, you may need to collect the statistics with `docker exec mtproxy /usr/bin/curl http://localhost:2398/stats`.
 
 * `ready_targets`: number of Telegram core servers the proxy will try to connect to.
 * `active_targets`: number of Telegram core servers the proxy is actually connected to. Should be equal to ready_targets.
